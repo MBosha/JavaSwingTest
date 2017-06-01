@@ -10,6 +10,9 @@ public class Main {
         MyFrame myWindow_2 = new MyFrame(200, 200);
         myWindow_2.setVisible(true);
 
+        MyFrame myWindow_3 = new MyFrame(300, 300);
+        myWindow_3.setVisible(true);
+
     }
 
 
