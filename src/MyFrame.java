@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class MyFrame extends JFrame {
 
-    MyFrame(int x, int y){
+    MyFrame(){
         super("Пробное окно");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         MyPanel newPanel = new MyPanel();
@@ -13,6 +13,5 @@ public class MyFrame extends JFrame {
         newPanel.add(new MyButton("-"));
         newPanel.add(new MyButton("Кнопка с длинной надписью"));
         setContentPane(newPanel);
-        setSize(x, y);
     }
 }
