@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class MyPanel extends JPanel{
 
-    MyPanel(){
+    MyPanel(int width, int height){
         super();
-        setSize(250, 250);
+        setSize(width, height);
     }
 }

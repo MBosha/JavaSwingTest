@@ -2,9 +2,9 @@ import javax.swing.*;
 
 public class MyButton extends JButton {
 
-    MyButton(String text){
+    MyButton(String text, int width, int height){
         super(text, null);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(200, 100);
+        setSize(width, height);
     }
 }
