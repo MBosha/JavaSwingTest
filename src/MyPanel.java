@@ -7,7 +7,4 @@ public class MyPanel extends JPanel{
         super();
         setSize(width, height);
     }
-
-    public void add(Image image) {
-    }
 }

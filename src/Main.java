@@ -10,14 +10,17 @@ public class Main {
     public static void main (String [] args) throws IOException {
 
         MyFrame myWindow_1 = new MyFrame("myWindow_1");
-        MyPanel myPanel = new MyPanel(50,50);
-        MyButton myButton = new MyButton("myButton",50, 50);
+        MyPanel myPanel = new MyPanel(300,300);
+        MyButton myButton = new MyButton("myButton",100, 100);
         MyCanvas myCanvas = new MyCanvas();
         myWindow_1.setBounds(100, 100, 300,300);
 
-        myPanel.add(myButton);
+        myWindow_1.add(myButton);
         myPanel.add(myCanvas);
-        myWindow_1.add(myPanel.add(myCanvas));
+        myWindow_1.add(myCanvas);
+        //myWindow_1.removeAll();
+
+
         myWindow_1.setVisible(true);
 
         //MyFrame myWindow_2 = new MyFrame("myWindow_2");
