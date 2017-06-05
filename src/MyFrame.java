@@ -1,5 +1,8 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class MyFrame extends JFrame {
 
@@ -21,5 +24,25 @@ public class MyFrame extends JFrame {
 
         super.setBounds(30, 30, 300, 300);
         super.getContentPane().add(new MyCanvas());
+
+        class Panel extends JPanel
+        {
+
+            public void paintComponent(Graphics g)
+            {
+                Image img;
+                try
+                {
+                    img = ImageIO.read(new File("/logo.jpg"));
+                    g.drawImage(img, 0, 0, this);
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+
+            }
+
+        }
     }
 }

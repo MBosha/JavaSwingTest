@@ -1,22 +1,25 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 class MyCanvas extends JComponent {
 
+    public MyCanvas() {
+    }
+
+    @Override
     public void paint(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
+        //Graphics g2 = (Graphics) g;
 
         try {
-            BufferedImage image = ImageIO.read(new java.io.File("img/ace.png"));
-            g2.drawImage(image, 10, 10, null);
-            //g2.finalize();
+            Image image;
+            image = ImageIO.read(new File("C:\\GitHub\\JavaSwingTest\\src\\img\\ace.png"));
+            g.drawImage(image, 0, 0, null);
+            g.finalize();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //Image img1 = Toolkit.getDefaultToolkit().getImage("img/ace.png");
-
     }
 }
