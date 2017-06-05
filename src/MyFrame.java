@@ -8,6 +8,7 @@ public class MyFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         super.setBounds(20, 20, 30,30);
+        Graphics g;
         super.add(new MyCanvas());
 
         /*MyPanel newPanel = new MyPanel(100,100);
