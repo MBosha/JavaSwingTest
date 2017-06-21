@@ -8,11 +8,10 @@ class MyCanvas extends JComponent {
 
     @Override
     public void paint(Graphics g) {
-        //Graphics g2 = (Graphics) g;
 
         try {
             Image image = ImageIO.read(new File("C:\\GitHub\\JavaSwingTest\\src\\img\\ace.png"));
-            g.drawImage(image, 200, 200, null);
+            g.drawImage(image, Model.getX(), Model.getY(), null);
             g.finalize();
         } catch (IOException e) {
             e.printStackTrace();
