@@ -1,66 +1,34 @@
-import javafx.event.ActionEvent;
-
-import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.awt.*;
-
-import java.util.Random;
-
 
 public class Main {
 
     public static void main (String [] args) throws IOException, InterruptedException {
 
+        //Model model = new Model();
+        Model model = new Model();
         MyFrame myWindow_1 = new MyFrame("myWindow_1");
-        //MyPanel myPanel = new MyPanel(300,300);
-        //MyButton myButton = new MyButton("myButton",100, 100);
-        MyCanvas myCanvas_1 = new MyCanvas();
-        MyCanvas myCanvas_2 = new MyCanvas();
+        CardPanel myCardPanel_1 = new CardPanel();
+        CardPanel myCardPanel_2 = new CardPanel();
 
         myWindow_1.setBounds(200, 200, 300, 300);
 
-        //myWindow_1.add(myButton);
-        //myWindow_1.add(myPanel);
-        //myPanel.add(myCanvas);
+        model.setX(0);
+        model.setY(0);
+        myWindow_1.add(myCardPanel_1,0);
+
+        model.setX(100);
+        model.setY(100);
+        myWindow_1.add(myCardPanel_2,1);
 
         myWindow_1.setVisible(true);
 
-        for (int i = 0; i < 199; i++) {
-
-            int a = i % 2;
-
-            //myCanvas = new MyCanvas();
-
-            if (a == 0) {
-                Model.setX(i);
-                Model.setY(i);
-                myWindow_1.add(myCanvas_1, 0);
-                Model.setX(i + 1);
-                Model.setY(i + 1);
-                myWindow_1.add(myCanvas_2, 1);
-            }
-
-            /*if (a == 1) {
-                myWindow_1.remove(myCanvas_1);
-            }*/
-
+        for (int i = 0; i < 100; i++) {
+            model.setX(i);
+            model.setY(i + 50);
             myWindow_1.repaint();
-            Thread.sleep(50);
-
-            JFrame app = new Pyatnashki();
-            app.setVisible(true);
+            myCardPanel_1.repaint();
+            myCardPanel_2.repaint();
+            Thread.sleep(10);
         }
-
-
-        //MyFrame myWindow_2 = new MyFrame("myWindow_2");
-        //myWindow_2.setBounds(200, 200, 200,200);
-        //myWindow_2.setVisible(true);
-
-        //MyFrame myWindow_3 = new MyFrame("myWindow_3");
-        //myWindow_3.setBounds(400, 400, 300,300);
-        //myWindow_3.setVisible(true);
-
-
     }
 }

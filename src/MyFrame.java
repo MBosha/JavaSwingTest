@@ -12,6 +12,7 @@ public class MyFrame extends JFrame {
     MyFrame(String text){
         super(text);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
         createMenu();
     }
 
@@ -23,6 +24,16 @@ public class MyFrame extends JFrame {
             JMenuItem item = new JMenuItem(fileItem);
             item.setActionCommand(fileItem.toLowerCase());
             item.addActionListener(new NewMenuListener() {
+                @Override
+                protected void repaintField() {
+
+                }
+
+                @Override
+                protected void generate() {
+
+                }
+
                 @Override
                 public void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -38,7 +49,7 @@ public class MyFrame extends JFrame {
 
     private abstract class NewMenuListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String command = (String) e.clone(); //getActionCommand();
+            String command = (String) e.getSource(); ; //getActionCommand();
             if ("exit".equals(command)) {
                 System.exit(0);
             }

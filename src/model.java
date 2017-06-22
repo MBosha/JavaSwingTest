@@ -4,19 +4,19 @@ public class Model {
     static int x;
     static int y;
 
-    public static int getX() {
+    public int getX() {
         return x;
     }
 
-    public static int getY() {
+    public int getY() {
         return y;
     }
 
-    public static void setX(int x) {
+    public void setX(int x) {
         Model.x = x;
     }
 
-    public static void setY(int y) {
+    public void setY(int y) {
         Model.y = y;
     }
 }
